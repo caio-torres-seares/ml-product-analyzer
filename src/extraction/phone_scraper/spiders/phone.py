@@ -17,14 +17,20 @@ class PhoneSpider(scrapy.Spider):
 
             brand = product.css('span.poly-component__brand::text').get()
             name = product.css('a.poly-component__title::text').get()
+            seller = product.css('span.poly-component__seller::text').get()
             old_price = product.css('div.poly-component__price s span.andes-money-amount__fraction::text').get()
             new_price = product.css('div.poly-price__current span.andes-money-amount__fraction::text').get()
+            reviews_rating_number = product.css('span.poly-reviews__rating::text').get()
+            reviews_amount = product.css('span.poly-reviews__total::text').get()
             link = product.css('a.poly-component__title::attr(href)').get()
             yield {
                 'brand' : brand,
                 'name': name,
+                'seller': seller,
                 'old_price': old_price,
                 'new_price': new_price,
+                'reviews_rating_number': reviews_rating_number,
+                'reviews_amount': reviews_amount,
                 'link': link
             }
 
