@@ -52,5 +52,3 @@ streamlit run app.py
 Acesse o endereço exibido pelo Streamlit para visualizar os KPIs, gráficos de marcas, preços e avaliações.
 
 ---
-
-Sinta-se à vontade para adaptar o projeto para outros produtos ou análises!
